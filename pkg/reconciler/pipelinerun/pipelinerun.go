@@ -987,6 +987,7 @@ func (c *Reconciler) createTaskRun(ctx context.Context, taskRunName string, para
 		},
 		Spec: v1.TaskRunSpec{
 			Retries:            rpt.PipelineTask.Retries,
+			Debug: 				taskRunSpec.Debug,
 			Params:             params,
 			ServiceAccountName: taskRunSpec.ServiceAccountName,
 			PodTemplate:        taskRunSpec.PodTemplate,

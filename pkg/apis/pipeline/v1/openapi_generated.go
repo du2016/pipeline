@@ -2201,6 +2201,11 @@ func schema_pkg_apis_pipeline_v1_PipelineTaskRunSpec(ref common.ReferenceCallbac
 							Ref: ref("github.com/tektoncd/pipeline/pkg/apis/pipeline/v1.PipelineTaskMetadata"),
 						},
 					},
+					"debug": {
+						SchemaProps: spec.SchemaProps{
+							Ref: ref("github.com/tektoncd/pipeline/pkg/apis/pipeline/v1.TaskRunDebug"),
+						},
+					},
 					"computeResources": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Compute resources to use for this TaskRun",
@@ -2211,7 +2216,7 @@ func schema_pkg_apis_pipeline_v1_PipelineTaskRunSpec(ref common.ReferenceCallbac
 			},
 		},
 		Dependencies: []string{
-			"github.com/tektoncd/pipeline/pkg/apis/pipeline/pod.Template", "github.com/tektoncd/pipeline/pkg/apis/pipeline/v1.PipelineTaskMetadata", "github.com/tektoncd/pipeline/pkg/apis/pipeline/v1.TaskRunSidecarSpec", "github.com/tektoncd/pipeline/pkg/apis/pipeline/v1.TaskRunStepSpec", "k8s.io/api/core/v1.ResourceRequirements"},
+			"github.com/tektoncd/pipeline/pkg/apis/pipeline/pod.Template", "github.com/tektoncd/pipeline/pkg/apis/pipeline/v1.PipelineTaskMetadata", "github.com/tektoncd/pipeline/pkg/apis/pipeline/v1.TaskRunDebug", "github.com/tektoncd/pipeline/pkg/apis/pipeline/v1.TaskRunSidecarSpec", "github.com/tektoncd/pipeline/pkg/apis/pipeline/v1.TaskRunStepSpec", "k8s.io/api/core/v1.ResourceRequirements"},
 	}
 }
 

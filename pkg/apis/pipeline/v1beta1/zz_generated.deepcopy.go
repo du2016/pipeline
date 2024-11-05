@@ -1456,6 +1456,11 @@ func (in *PipelineTaskRunSpec) DeepCopyInto(out *PipelineTaskRunSpec) {
 		*out = new(PipelineTaskMetadata)
 		(*in).DeepCopyInto(*out)
 	}
+	if in.Debug != nil {
+		in, out := &in.Debug, &out.Debug
+		*out = new(TaskRunDebug)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.ComputeResources != nil {
 		in, out := &in.ComputeResources, &out.ComputeResources
 		*out = new(corev1.ResourceRequirements)

@@ -646,6 +646,9 @@ type PipelineTaskRunSpec struct {
 	// +optional
 	Metadata *PipelineTaskMetadata `json:"metadata,omitempty"`
 
+	// +optional
+	Debug *TaskRunDebug `json:"debug,omitempty"`
+
 	// Compute resources to use for this TaskRun
 	ComputeResources *corev1.ResourceRequirements `json:"computeResources,omitempty"`
 }

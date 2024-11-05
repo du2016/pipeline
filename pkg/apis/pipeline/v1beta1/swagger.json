@@ -1543,6 +1543,9 @@
           "description": "Compute resources to use for this TaskRun",
           "$ref": "#/definitions/v1.ResourceRequirements"
         },
+        "debug": {
+          "$ref": "#/definitions/v1beta1.TaskRunDebug"
+        }, 
         "metadata": {
           "$ref": "#/definitions/v1beta1.PipelineTaskMetadata"
         },

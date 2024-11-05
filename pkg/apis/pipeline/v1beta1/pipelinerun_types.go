@@ -610,6 +610,9 @@ type PipelineTaskRunSpec struct {
 	// +optional
 	Metadata *PipelineTaskMetadata `json:"metadata,omitempty"`
 
+	// +optional
+	Debug *TaskRunDebug `json:"debug,omitempty"`
+
 	// Compute resources to use for this TaskRun
 	ComputeResources *corev1.ResourceRequirements `json:"computeResources,omitempty"`
 }
@@ -633,6 +636,7 @@ func (pr *PipelineRun) GetTaskRunSpec(pipelineTaskName string) PipelineTaskRunSp
 			s.StepOverrides = task.StepOverrides
 			s.SidecarOverrides = task.SidecarOverrides
 			s.Metadata = task.Metadata
+			s.Debug = task.Debug
 			s.ComputeResources = task.ComputeResources
 		}
 	}
