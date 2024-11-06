@@ -188,6 +188,10 @@ func (ptrs PipelineTaskRunSpec) convertTo(ctx context.Context, sink *v1.Pipeline
 		sink.Metadata = &v1.PipelineTaskMetadata{}
 		ptrs.Metadata.convertTo(ctx, sink.Metadata)
 	}
+	if ptrs.Debug!=nil {
+		sink.Debug = &v1.TaskRunDebug{}
+		ptrs.Debug.convertTo(ctx, sink.Debug)
+	}
 	sink.ComputeResources = ptrs.ComputeResources
 }
 
@@ -211,6 +215,11 @@ func (ptrs *PipelineTaskRunSpec) convertFrom(ctx context.Context, source v1.Pipe
 		newMetadata := PipelineTaskMetadata{}
 		newMetadata.convertFrom(ctx, *source.Metadata)
 		ptrs.Metadata = &newMetadata
+	}
+	if source.Debug != nil {
+		newDebug := TaskRunDebug{}
+		newDebug.convertFrom(ctx, *source.Debug)
+		ptrs.Debug = &newDebug
 	}
 	ptrs.ComputeResources = source.ComputeResources
 }

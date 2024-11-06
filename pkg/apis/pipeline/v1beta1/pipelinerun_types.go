@@ -19,6 +19,7 @@ package v1beta1
 import (
 	"context"
 	"fmt"
+	"log"
 	"time"
 
 	"github.com/tektoncd/pipeline/pkg/apis/config"
@@ -637,6 +638,7 @@ func (pr *PipelineRun) GetTaskRunSpec(pipelineTaskName string) PipelineTaskRunSp
 			s.SidecarOverrides = task.SidecarOverrides
 			s.Metadata = task.Metadata
 			s.Debug = task.Debug
+			log.Println("b1 debug value is ", task.Debug)
 			s.ComputeResources = task.ComputeResources
 		}
 	}

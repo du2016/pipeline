@@ -902,6 +902,7 @@ func (c *Reconciler) runNextSchedulableTask(ctx context.Context, pr *v1.Pipeline
 			}
 		}
 
+		fmt.Println("rpt.IsCustomTask() xxx", rpt.IsCustomTask())
 		if rpt.IsCustomTask() {
 			rpt.CustomRuns, err = c.createCustomRuns(ctx, rpt, pr, pipelineRunFacts)
 			if err != nil {
@@ -987,7 +988,7 @@ func (c *Reconciler) createTaskRun(ctx context.Context, taskRunName string, para
 		},
 		Spec: v1.TaskRunSpec{
 			Retries:            rpt.PipelineTask.Retries,
-			Debug: 				taskRunSpec.Debug,
+			Debug:              taskRunSpec.Debug,
 			Params:             params,
 			ServiceAccountName: taskRunSpec.ServiceAccountName,
 			PodTemplate:        taskRunSpec.PodTemplate,
